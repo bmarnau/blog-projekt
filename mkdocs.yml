@@ -1,0 +1,58 @@
+﻿site_name: Systemengineering & Praxis
+site_url: https://bmarnau.github.io/blog-projekt/
+site_description: Ungeschönte Berichte, Lerneffekte und Architektur aus dem Systemhaus-Alltag.
+site_author: Bernd Marnau
+
+theme:
+  name: material
+  language: de
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Zum Nacht-Design wechseln
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Zum Tages-Design wechseln
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - navigation.indexes
+    - navigation.top
+    - navigation.instant
+    - header.autohide
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.def_list_custom_fence
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - attr_list
+
+nav:
+  - Übersicht: index.md
+  - Leitplanken:
+      - Tonalität: 00_guidelines/tone_and_style.md
+      - KI-Rolle: 00_guidelines/ai_collaboration.md
+      - Workflow: 00_guidelines/publishing_workflow.md
+  - Backlog: 01_backlog/topic_ideas.md
+  - Berichte:
+      - "4.000 Lint-Fehler": 02_posts/2026-09_4000-lint-errors/draft.md
