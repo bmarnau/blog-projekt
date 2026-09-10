@@ -1,0 +1,6 @@
+# Generated MkDocs output
+site/
+
+# Local Python artifacts
+__pycache__/
+*.py[cod]

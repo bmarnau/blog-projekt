@@ -1,6 +1,6 @@
-﻿site_name: Systemengineering & Praxis
+site_name: System Engineering & KI-Praxis
 site_url: https://bmarnau.github.io/blog-projekt/
-site_description: Ungeschönte Berichte, Lerneffekte und Architektur aus dem Systemhaus-Alltag.
+site_description: Praxisberichte über KI-gestützte Softwareentwicklung aus dem Systemhaus-Alltag.
 site_author: Bernd Marnau
 
 theme:
@@ -10,29 +10,30 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: blue grey
-      accent: indigo
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Zum Nacht-Design wechseln
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: blue grey
-      accent: light blue
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Zum Tages-Design wechseln
-
   font:
     text: Roboto
     code: Roboto Mono
-
   features:
     - navigation.indexes
     - navigation.top
     - navigation.instant
-    - header.autohide
+    - navigation.sections
     - search.suggest
     - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - pymdownx.superfences
@@ -42,13 +43,13 @@ markdown_extensions:
   - pymdownx.snippets
   - admonition
   - attr_list
+  - md_in_html
 
 nav:
-  - Übersicht: index.md
-  - Leitplanken:
-      - Tonalität: 00_guidelines/tone_and_style.md
-      - KI-Rolle: 00_guidelines/ai_collaboration.md
-      - Workflow: 00_guidelines/publishing_workflow.md
-  - Backlog: 01_backlog/topic_ideas.md
-  - Berichte:
-      - "4.000 Lint-Fehler": 02_posts/2026-09_4000-lint-errors/draft.md
+  - Start: index.md
+  - Artikel: artikel/index.md
+  - Themen: themen/index.md
+  - Über mich: ueber-mich.md
+  - Arbeitsbereich:
+      - Hinweise & Entscheidungen: intern/hinweise.md
+      - Artikelvorlage: intern/artikelvorlage.md

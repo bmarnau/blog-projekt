@@ -1,20 +1,21 @@
-name: Blog veröffentlichen
+name: Blog prüfen
 
 on:
   push:
     branches:
       - main
+  pull_request:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: blog-deploy
+  group: blog-check-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Prüfen und veröffentlichen
+  test:
+    name: Inhalt und Website
     runs-on: ubuntu-latest
     steps:
       - name: Repository laden
@@ -26,9 +27,7 @@ jobs:
           cache: pip
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
-      - name: Inhalte prüfen
+      - name: Navigation, Seiten und lokale Links prüfen
         run: python scripts/check_content.py
-      - name: Auf GitHub Pages veröffentlichen
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mkdocs gh-deploy --force --strict
+      - name: Website streng bauen
+        run: mkdocs build --strict
