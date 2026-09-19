@@ -1,0 +1,67 @@
+:root {
+  --md-primary-fg-color: #263746;
+  --md-primary-fg-color--light: #3f5568;
+  --md-primary-fg-color--dark: #172630;
+  --journal-accent: #2f6f73;
+  --journal-surface: #f4f7f7;
+}
+
+[data-md-color-scheme="slate"] {
+  --journal-accent: #79c6c8;
+  --journal-surface: #1d2a32;
+}
+
+.md-grid { max-width: 76rem; }
+.md-content__inner { max-width: 52rem; }
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.6em;
+}
+
+.md-typeset h2 {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin-top: 2.2em;
+  padding-top: 0.9em;
+}
+
+.md-typeset p,
+.md-typeset li { line-height: 1.72; }
+
+.md-typeset blockquote {
+  border-left-color: var(--journal-accent);
+  color: var(--md-default-fg-color);
+  font-size: 1.08rem;
+}
+
+.md-button {
+  border-radius: 0.2rem;
+  margin-bottom: 0.4rem;
+  margin-right: 0.35rem;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--journal-accent);
+  border-color: var(--journal-accent);
+}
+
+.value-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0 2rem;
+}
+
+.value-card {
+  background: var(--journal-surface);
+  border-top: 0.2rem solid var(--journal-accent);
+  padding: 0 1rem 0.3rem;
+}
+
+.value-grid h3 { margin-top: 0.8rem; }
+
+@media screen and (max-width: 44.9375em) {
+  .value-grid { grid-template-columns: 1fr; }
+  .md-typeset h1 { font-size: 1.8rem; }
+}
